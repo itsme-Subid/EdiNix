@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../assets/logo.png";
 import Typed from "typed.js";
+import { Link } from "react-router-dom";
 const Home = () => {
 	const el = React.useRef(null);
 	React.useEffect(() => {
@@ -10,7 +11,6 @@ const Home = () => {
 			loop: true,
 		});
 		return () => {
-			// Destroy Typed instance during cleanup to stop animation
 			typed.destroy();
 		};
 	}, []);
@@ -25,12 +25,16 @@ const Home = () => {
 					<button className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
 						Docs
 					</button>
-					<button className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
+					<button
+						to='/signup'
+						className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
 						Sign Up
 					</button>
-					<button className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
+					<Link
+						to='/login'
+						className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
 						Login
-					</button>
+					</Link>
 				</div>
 			</nav>
 			<section className='flex justify-center items-center min-h-screen'>
