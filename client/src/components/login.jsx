@@ -77,7 +77,7 @@ const Login = () => {
 							</Link>
 						</div>
 					</div>
-					<div className='w-1/2 min-h-screen'></div>
+					<div className='w-1/2 min-h-screen bg-login-image bg-center bg-cover'></div>
 				</div>
 			</section>
 		</>
