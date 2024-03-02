@@ -10,27 +10,31 @@ router.post("/commit", async (req, res) => {
   const { sourceBranch } = req.query;
   const { owner, repo, filePath } = req.body;
   const authHeaders = {
-    Authorization: `token ${token}`,
+    Authorization: `Bearer ${token}`,
     "Content-Type": "application/json",
   };
-
   try {
     const branchRes = await axios.get(
       `https://api.github.com/repos/${owner}/${repo}/git/ref/heads/${sourceBranch}`,
       {
-        headers: authHeaders,
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
     const latestCommitSha = branchRes.data.object.sha;
     const fileRes = await axios.get(
       `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}?ref=${sourceBranch}`,
       {
-        headers: authHeaders,
+        headers: {
+          "Content-Type": "application/json",
+        },
       }
     );
     const fileContent = Buffer.from(fileRes.data.content, "base64").toString(
       "utf-8"
     );
+    const updatedFileContent = fileContent + "\n\n// Updated by GitHub API";
     const blobRes = await axios.post(
       `https://api.github.com/repos/${owner}/${repo}/git/blobs`,
       {
@@ -72,7 +76,6 @@ router.post("/commit", async (req, res) => {
       }
     );
     const newCommitSha = commitRes.data.sha;
-
     await axios.patch(
       `https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${sourceBranch}`,
       {
@@ -82,6 +85,7 @@ router.post("/commit", async (req, res) => {
         headers: authHeaders,
       }
     );
+    return res.json(commitRes.data);
   } catch (error) {
     console.error("Error committing file:", error);
   }
@@ -122,7 +126,7 @@ router.post("/branch", async (req, res) => {
         headers: authHeaders,
       }
     );
-    return createBranchRes.data;
+    return res.json(createBranchRes.data);
   } catch (error) {
     console.error("Error creating branch:", error.response.data.message);
   }
@@ -143,15 +147,15 @@ router.post("/pull-request", async (req, res) => {
       data,
       {
         headers: {
-          Authorization: `token ${token}`,
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       }
     );
-    return response.data;
+    return res.json(response.data);
   } catch (error) {
-    console.error("Error creating branch:", error.response.data.message);
+    console.error("Error creating Pull request:", error.response.data);
   }
 });
 
-// export default router;
 module.exports = router;
