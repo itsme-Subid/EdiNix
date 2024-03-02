@@ -3,7 +3,7 @@ import axios from "axios";
 
 const token = "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";
 
-async function commitToFile({ owner, repo, branchName, filePath }) {
+async function commitToFile({ owner, repo, branchName, filePath, id }) {
   const authHeaders = {
     Authorization: `token ${token}`,
     "Content-Type": "application/json",
@@ -33,7 +33,16 @@ async function commitToFile({ owner, repo, branchName, filePath }) {
     const fileContent = atob(fileRes.data.content);
     console.log(fileContent);
     // Step 3: Modify the content of the file
-    const updatedFileContent = fileContent + "\nUpdated content";
+    // const updatedFileContent = fileContent + "\nUpdated content";
+
+    // we will search for this id and find the element and chnage the content inside of it. to the input provided
+
+    const updatedFileContent = fileContent.replace(
+      new RegExp(`id="${id}"`, "g"),
+      `id="${id}" > ${fileContent}`
+    );
+
+    console.log(updatedFileContent);
 
     // Step 4: Create a new blob with the updated file content
     const blobRes = await axios.post(
@@ -94,6 +103,14 @@ async function commitToFile({ owner, repo, branchName, filePath }) {
     );
 
     console.log("File committed successfully!");
+    await createPullRequest({
+      owner,
+      repo,
+      title: "Update file content",
+      base: "main",
+      head: branchName,
+      body: "This is a test pull request",
+    });
   } catch (error) {
     console.error("Error committing file:", error);
   }
@@ -129,6 +146,13 @@ async function createBranch({ owner, repo, branchName }) {
       data: createBranchRes.data,
     });
     console.log(`Branch '${branchName}' created successfully!`);
+    await commitToFile({
+      owner,
+      repo,
+      branchName,
+      filePath: "src/App.jsx",
+      id: "1"
+    });
   } catch (error) {
     console.error("Error creating branch:", error.response.data.message);
   }
@@ -166,17 +190,6 @@ const Edinix = ({
     repo,
   },
 }) => {
-  // createBranch({
-  //   owner: repo.owner,
-  //   repo: repo.repo,
-  //   branchName: "test2",
-  // });
-  commitToFile({
-    owner: repo.owner,
-    repo: repo.repo,
-    branchName: "test1",
-    filePath,
-  });
   const dialogRef = useRef(null);
   const [body, setBody] = useState(children);
   const [title, setTitle] = useState(`Update "${filePath}"`);
@@ -199,13 +212,18 @@ const Edinix = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await createPullRequest({
+    // await createPullRequest({
+    //   owner: repo.owner,
+    //   repo: repo.repo,
+    //   title,
+    //   base: "main",
+    //   head: "test",
+    //   body: change,
+    // });
+    await createBranch({
       owner: repo.owner,
       repo: repo.repo,
-      title,
-      base: "main",
-      head: "test",
-      body: change,
+      branchName: "test2",
     });
   };
 
