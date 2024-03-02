@@ -1,1 +1,1 @@
-export { default as CustomTag } from './CustomTag';
+export { default as Edinix } from "./edinix";
