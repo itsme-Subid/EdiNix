@@ -35,10 +35,12 @@ const Signup = () => {
 				</div>
 			</nav>
 			<section className='flex justify-center items-center min-h-screen my-10'>
-				<div className='w-3/4 h-screen bg-gray-200/50 shadow-white rounded-3xl flex '>
-					<div className='p-10 w-1/2 h-full bg-white rounded-l-3xl text-black flex flex-col items-center justify-center'>
-						<BiExclude className='text-9xl' />
-						<h1 className='text-4xl font-semibold mb-1'>Create Account</h1>
+				<div className='w-3/4 lg:h-screen h-full bg-gray-200/50 shadow-white rounded-3xl lg:flex'>
+					<div className='p-10 w-full lg:w-1/2 h-full bg-white rounded-t-3xl lg:rounded-l-3xl text-black flex flex-col items-center justify-center'>
+						<BiExclude className='md:text-9xl sm:text-7xl text-5xl' />
+						<h1 className='md:text-4xl text-2xl font-semibold mb-1'>
+							Create Account
+						</h1>
 						<h1>And gain access to our service</h1>
 						<div className='w-full'>
 							<label
@@ -90,7 +92,7 @@ const Signup = () => {
 							</button>
 						</div>
 					</div>
-					<div className='bg-black w-1/2 min-h-screen flex flex-col justify-center items-center m-auto relative rounded-r-3xl bg-signup-image bg-cover bg-center'></div>
+					<div className='bg-black w-full lg:w-1/2 lg:h-screen h-[590px] flex flex-col justify-center items-center m-auto relative lg:rounded-r-3xl rounded-b-3xl bg-signup-image bg-cover bg-center'></div>
 				</div>
 			</section>
 		</>
