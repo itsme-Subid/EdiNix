@@ -29,7 +29,11 @@ const Login = () => {
 				</div>
 			</nav>
 			<section className='flex justify-center items-center min-h-screen'>
-				<div className='w-2/3 h-screen bg-gray-200 shadow-white '></div>
+				<div className='w-3/4 h-screen bg-gray-200/50 shadow-white rounded-3xl'>
+					<div className='p-10 w-2/3 h-full bg-white rounded-l-3xl'>
+						<img src={Logo} alt='' className='w-10' />
+					</div>
+				</div>
 			</section>
 		</>
 	);
