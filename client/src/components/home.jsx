@@ -6,6 +6,7 @@ import { BiExclude } from "react-icons/bi";
 import { MdContentCopy } from "react-icons/md";
 
 const Home = () => {
+	const [copied, setCopied] = React.useState(false);
 	const el = React.useRef(null);
 	React.useEffect(() => {
 		const typed = new Typed(el.current, {
@@ -17,6 +18,15 @@ const Home = () => {
 			typed.destroy();
 		};
 	}, []);
+
+	const handleCopy = () => {
+		navigator.clipboard.writeText("npm install edinix");
+		setCopied(true);
+        setTimeout(() => {
+          setCopied(false);
+        }, 2000);
+	}
+	
 	return (
 		<>
 			<nav className='flex justify-between items-center max-w-full h-16 bg-slate-950 text-white px-5 '>
@@ -44,7 +54,7 @@ const Home = () => {
 			</nav>
 			<section className='flex justify-center items-center min-h-screen'>
 				<div className='flex flex-col w-[80%] justify-center items-center lg:px-52 md:px-48 sm:px-36 px-24 flex-wrap'>
-					<h1 className='md:text-7xl flex justify-center sm:text-5xl text-4xl font-black tracking-tighter'>
+					<h1 className='md:text-7xl flex justify-center sm:text-5xl text-4xl font-black tracking-tighter tracking-wide'>
 						Take Contributions to Next Level
 					</h1>
 					<div className="flex justify-start flex-col gap-4">
@@ -62,8 +72,11 @@ const Home = () => {
 					<div className='my-10 text-2xl'>
 						<span ref={el} />
 					</div>
-					<h1 className='font-semibold border border-grey-200 w-1/2 justify-center rounded-lg bg-black text-sm font-extralight py-2 flex gap-2 items-center px-4 text-4xl'><span>$ npm install edinix</span>
-					<MdContentCopy /></h1>
+					<h1 className='font-semibold border border-grey-200 w-1/2 justify-center rounded-lg bg-black text-sm font-extralight py-2 flex gap-2 items-center px-4 text-4xl cursor-pointer' onClick={handleCopy}>
+						<span>$ npm install edinix</span>
+						<MdContentCopy />
+						{copied&& <p>Copied</p>}
+					</h1>
 				</div>
 			</section>
 		</>
