@@ -22,14 +22,16 @@ const Home = () => {
 					<h1 className='font-semibold'>HackNITR</h1>
 				</div>
 				<div className='flex justify-center items-center'>
-					<button className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
+					<Link
+						to='/docs'
+						className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
 						Docs
-					</button>
-					<button
+					</Link>
+					<Link
 						to='/signup'
 						className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
 						Sign Up
-					</button>
+					</Link>
 					<Link
 						to='/login'
 						className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
