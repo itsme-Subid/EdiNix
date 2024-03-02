@@ -11,7 +11,7 @@ const Home = () => {
 	React.useEffect(() => {
 		const typed = new Typed(el.current, {
 			strings: ["$ npm install edinix"],
-			typeSpeed: 70,
+			typeSpeed: 80,
 			loop: true,
 		});
 		return () => {
@@ -22,11 +22,11 @@ const Home = () => {
 	const handleCopy = () => {
 		navigator.clipboard.writeText("npm install edinix");
 		setCopied(true);
-        setTimeout(() => {
-          setCopied(false);
-        }, 2000);
-	}
-	
+		setTimeout(() => {
+			setCopied(false);
+		}, 2000);
+	};
+
 	return (
 		<>
 			<nav className='flex justify-between items-center max-w-full h-16 bg-slate-950 text-white px-5 '>
@@ -54,28 +54,30 @@ const Home = () => {
 			</nav>
 			<section className='flex justify-center items-center min-h-screen'>
 				<div className='flex flex-col w-[80%] justify-center items-center lg:px-52 md:px-48 sm:px-36 px-24 flex-wrap'>
-					<h1 className='md:text-7xl flex justify-center sm:text-5xl text-4xl font-black tracking-tighter tracking-wide'>
+					<h1 className='md:text-7xl flex justify-center sm:text-5xl text-4xl font-black tracking-tighter '>
 						Take Contributions to Next Level
 					</h1>
-					<div className="flex justify-start flex-col gap-4">
-					<p className='text-2xl font-medium mt-5 text-gray-500'>
-						Contribute to open source projects with ease, without worrying about
-						git and github.
-					</p>
-					<button className='bg-gray-500 text-xl hover:bg-gray-700 font-bold py-4 md:px-4 rounded mt-10 duration-300 w-1/2 sm:w-1/3 md:1/4'>
-						Get Started
-					</button>
-					<h1 className='text-gray-200 text-sm'>
-						View installation instructions &rarr;
-					</h1>
+					<div className='flex justify-start flex-col gap-4'>
+						<p className='text-2xl font-medium mt-5 text-gray-500'>
+							Contribute to open source projects with ease, without worrying
+							about git and github.
+						</p>
+						<button className='bg-gray-500 text-xl hover:bg-gray-700 font-bold py-4 md:px-4 rounded mt-10 duration-300 w-1/2 sm:w-1/3 md:1/4'>
+							Get Started
+						</button>
+						<h1 className='text-gray-200 text-sm'>
+							View installation instructions &rarr;
+						</h1>
 					</div>
 					<div className='my-10 text-2xl'>
 						<span ref={el} />
 					</div>
-					<h1 className='font-semibold border border-grey-200 w-1/2 justify-center rounded-lg bg-black text-sm font-extralight py-2 flex gap-2 items-center px-4 text-4xl cursor-pointer' onClick={handleCopy}>
-						<span>$ npm install edinix</span>
-						<MdContentCopy />
-						{copied&& <p>Copied</p>}
+					<h1
+						className=' border border-grey-200 w-1/2 justify-center rounded-lg bg-black text-sm font-extralight py-2 flex gap-2 items-center px-4 cursor-pointer'
+						onClick={handleCopy}>
+						{!copied && <span>$ npm install edinix</span>}
+						{!copied && <MdContentCopy />}
+						{copied && <p>Copied</p>}
 					</h1>
 				</div>
 			</section>

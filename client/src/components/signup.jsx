@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
+import { BiExclude } from "react-icons/bi";
 
 const Signup = () => {
 	return (
 		<>
 			<nav className='flex justify-between items-center max-w-full h-16 bg-slate-950 text-white px-5 '>
 				<div className='flex items-center'>
-					<img src={Logo} alt='' className='w-10 mx-3' />
-					<h1 className='font-semibold'>HackNITR</h1>
+					<BiExclude className='text-4xl' />
+					<h1 className='font-semibold'>EdiNix</h1>
 				</div>
 				<div className='flex justify-center items-center'>
 					<Link
@@ -36,7 +37,7 @@ const Signup = () => {
 			<section className='flex justify-center items-center min-h-screen my-10'>
 				<div className='w-3/4 h-screen bg-gray-200/50 shadow-white rounded-3xl flex '>
 					<div className='p-10 w-1/2 h-full bg-white rounded-l-3xl text-black flex flex-col items-center justify-center'>
-						<img src={Logo} alt='' className='w-20 mb-4 m-auto' />
+						<BiExclude className='text-9xl' />
 						<h1 className='text-4xl font-semibold mb-1'>Create Account</h1>
 						<h1>And gain access to our service</h1>
 						<div className='w-full'>
