@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 
-const token = "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";
+// const token = process.env.ACCESS_TOKEN;
 
 async function commitToFile({ owner, repo, branchName, filePath, id }) {
   const authHeaders = {
@@ -35,12 +35,7 @@ async function commitToFile({ owner, repo, branchName, filePath, id }) {
     // Step 3: Modify the content of the file
     // const updatedFileContent = fileContent + "\nUpdated content";
 
-    // we will search for this id and find the element and chnage the content inside of it. to the input provided
-
-    const updatedFileContent = fileContent.replace(
-      new RegExp(`id="${id}"`, "g"),
-      `id="${id}" > ${fileContent}`
-    );
+    
 
     console.log(updatedFileContent);
 
