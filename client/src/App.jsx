@@ -26,7 +26,7 @@ function App() {
           filePath={"index.html"}
           style={{ color: "red" }}
         >
-          Fuck you
+          jsdfljsd you
         </Edinix>
       </h1>
       <div className="card">

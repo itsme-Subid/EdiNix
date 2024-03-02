@@ -169,7 +169,7 @@ const Edinix = ({
   // createBranch({
   //   owner: repo.owner,
   //   repo: repo.repo,
-  //   branchName: "test1",
+  //   branchName: "test2",
   // });
   commitToFile({
     owner: repo.owner,
