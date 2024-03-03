@@ -3,7 +3,7 @@ import Typed from "typed.js";
 import { Link } from "react-router-dom";
 import { BiExclude } from "react-icons/bi";
 import { MdContentCopy } from "react-icons/md";
-import Edinix from "../../../edinix/edinix";
+import Edinix from "edinix";
 
 const Home = () => {
   const [copied, setCopied] = React.useState(false);

@@ -14,6 +14,9 @@ dependencies:
   dotenv:
     specifier: ^16.4.5
     version: 16.4.5
+  edinix:
+    specifier: ^1.0.1
+    version: 1.0.1
   express:
     specifier: ^4.18.3
     version: 4.18.3
@@ -28,6 +31,104 @@ dependencies:
     version: 9.0.1
 
 packages:
+
+  /@material/animation@1.0.0:
+    resolution: {integrity: sha512-Ed5/vggn6ZhSJ87yn3ZS1d826VJNFz73jHF2bSsgRtHDoB8KCuOwQMfdgAgDa4lKDF6CDIPCKBZPKrs2ubehdw==}
+    dependencies:
+      tslib: 1.14.1
+    dev: false
+
+  /@material/base@1.0.0:
+    resolution: {integrity: sha512-5dxFp46x5FA+Epg6YHLzN+5zRt9S2wR84UdvVAEJ1egea94m9UHUg7y9tAnNSN16aexRSywmzyLwPr+i8PGEYA==}
+    dependencies:
+      tslib: 1.14.1
+    dev: false
+
+  /@material/button@1.1.1:
+    resolution: {integrity: sha512-03aEyzZBIeqpgZkqLjro/enz8ORUnfQslBUdAgkPqdjh1X0oIEugr3UaFyC5QlSBTU3j3GIsnKIxWaggkRenpQ==}
+    dependencies:
+      '@material/elevation': 1.1.0
+      '@material/feature-targeting': 0.44.1
+      '@material/ripple': 1.1.0
+      '@material/rtl': 0.42.0
+      '@material/shape': 1.1.1
+      '@material/theme': 1.1.0
+      '@material/typography': 1.0.0
+    dev: false
+
+  /@material/dom@1.1.0:
+    resolution: {integrity: sha512-+HWW38ZaM2UBPu4+7QCusLDSf4tFT31rsEXHkTkxYSg/QpDivfPx6YDz4OmYtafmhPR1d1YjqB3MYysUHdodyw==}
+    dependencies:
+      tslib: 1.14.1
+    dev: false
+
+  /@material/elevation@1.1.0:
+    resolution: {integrity: sha512-m4eATJvDhWK1BT+yA1iHz5mhAk8cV9olC4mjVzm4PTAqhDH2yya4WzjN1HPVHE/a65ObyZ7V4qopxu9MRocm3A==}
+    dependencies:
+      '@material/animation': 1.0.0
+      '@material/feature-targeting': 0.44.1
+      '@material/theme': 1.1.0
+    dev: false
+
+  /@material/feature-targeting@0.44.1:
+    resolution: {integrity: sha512-90cc7njn4aHbH9UxY8qgZth1W5JgOgcEdWdubH1t7sFkwqFxS5g3zgxSBt46TygFBVIXNZNq35Xmg80wgqO7Pg==}
+    dev: false
+
+  /@material/react-button@0.15.0(react@16.14.0):
+    resolution: {integrity: sha512-OnnQx1XEomYlmp9TQIRYy+UAzJG1NPlmBfX/oP6hkxB4bWcrR2MLbqR4J1RMLDjl7a6qfdU2HskWPYp0wS+4Pw==}
+    peerDependencies:
+      react: ^16.4.2
+    dependencies:
+      '@material/button': 1.1.1
+      '@material/react-ripple': 0.15.0(react@16.14.0)
+      classnames: 2.5.1
+      react: 16.14.0
+    dev: false
+
+  /@material/react-ripple@0.15.0(react@16.14.0):
+    resolution: {integrity: sha512-8YPEpiQNOaq3QtMc1DBxVVqOg/XnoWDj/EJ8eW0xmB4HvXElztKNTZoIpAAuQMZ8jbyZkRJRiFDa33u+wLFDCg==}
+    peerDependencies:
+      react: ^16.4.2
+    dependencies:
+      '@material/dom': 1.1.0
+      '@material/ripple': 1.1.0
+      classnames: 2.5.1
+      react: 16.14.0
+      utility-types: 3.11.0
+    dev: false
+
+  /@material/ripple@1.1.0:
+    resolution: {integrity: sha512-mkfDBZAmxjpRG7V9TrfOmLxt1g/wvGHCXtYPgvH7W8ozjf53edqxLOFENEdvHbie27y9nyixzXn0gzU0HnxSeA==}
+    dependencies:
+      '@material/animation': 1.0.0
+      '@material/base': 1.0.0
+      '@material/dom': 1.1.0
+      '@material/feature-targeting': 0.44.1
+      '@material/theme': 1.1.0
+      tslib: 1.14.1
+    dev: false
+
+  /@material/rtl@0.42.0:
+    resolution: {integrity: sha512-VrnrKJzhmspsN8WXHuxxBZ69yM5IwhCUqWr1t1eNfw3ZEvEj7i1g3P31HGowKThIN1dc1Wh4LE14rCISWCtv5w==}
+    dev: false
+
+  /@material/shape@1.1.1:
+    resolution: {integrity: sha512-Jge/h1XBLjdLlam4QMSzVgM99e/N8+elQROPkltqVP7eyLc17BwM3aP5cLVfZDgrJgvsjUxbgAP1H1j8sqmUyg==}
+    dependencies:
+      '@material/feature-targeting': 0.44.1
+    dev: false
+
+  /@material/theme@1.1.0:
+    resolution: {integrity: sha512-YYUV9Rhbx4r/EMb/zoOYJUWjhXChNaLlH1rqt3vpNVyxRcxGqoVMGp5u1XALBCFiD9dACPKLIkKyRYa928nmPQ==}
+    dependencies:
+      '@material/feature-targeting': 0.44.1
+    dev: false
+
+  /@material/typography@1.0.0:
+    resolution: {integrity: sha512-Oeqbjci1cC7jTE8/n3dwnkqKe9ZeWiaE+rgMtRYtRFw1HvAw14SpGA5EEAS/Li2Hu2KZ50FYCe3HYqShfxtChA==}
+    dependencies:
+      '@material/feature-targeting': 0.44.1
+    dev: false
 
   /abbrev@1.1.1:
     resolution: {integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==}
@@ -150,6 +251,10 @@ packages:
       fsevents: 2.3.3
     dev: false
 
+  /classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
+    dev: false
+
   /combined-stream@1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
@@ -260,6 +365,17 @@ packages:
   /dotenv@16.4.5:
     resolution: {integrity: sha512-ZmdL2rui+eB2YwhsWzjInR8LldtZHGDoQ1ugH85ppHKwpUHL7j7rN0Ti9NCnGiQbhaZ11FpR+7ao1dNsmduNUg==}
     engines: {node: '>=12'}
+    dev: false
+
+  /edinix@1.0.1:
+    resolution: {integrity: sha512-1vLdZRmD7dhyGh9c78pQeVBgh3n08Tvic+7c6UGtzt+oUtspr9GRHuY6773Enx52eY3y+fUMVqoMyV82pDgDKg==}
+    dependencies:
+      '@material/react-button': 0.15.0(react@16.14.0)
+      axios: 1.6.7
+      prop-types: 15.8.1
+      react: 16.14.0
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /ee-first@1.1.1:
@@ -544,6 +660,10 @@ packages:
     resolution: {integrity: sha512-bCYeRA2rVibKZd+s2625gGnGF/t7DSqDs4dP7CrLA1m7jKWz6pps0LpYLJN8Q64HtmPKJ1hrN3nzPNKFEKOUiQ==}
     dev: false
 
+  /js-tokens@4.0.0:
+    resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
+    dev: false
+
   /jsdom@24.0.0:
     resolution: {integrity: sha512-UDS2NayCvmXSXVP6mpTj+73JnNQadZlr9N68189xib2tx5Mls7swlTNao26IoHv46BZJFvXygyRtyXd1feAk1A==}
     engines: {node: '>=18'}
@@ -578,6 +698,13 @@ packages:
       - bufferutil
       - supports-color
       - utf-8-validate
+    dev: false
+
+  /loose-envify@1.4.0:
+    resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
+    hasBin: true
+    dependencies:
+      js-tokens: 4.0.0
     dev: false
 
   /lru-cache@6.0.0:
@@ -711,6 +838,14 @@ packages:
     engines: {node: '>=8.6'}
     dev: false
 
+  /prop-types@15.8.1:
+    resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+    dev: false
+
   /proxy-addr@2.0.7:
     resolution: {integrity: sha512-llQsMLSUDUPT44jdrU/O37qlnifitDP+ZwrmmZcoSKyLKvtZxpyV0n2/bD/N4tBAAZ/gJEdZU7KMraoK1+XYAg==}
     engines: {node: '>= 0.10'}
@@ -760,6 +895,19 @@ packages:
       http-errors: 2.0.0
       iconv-lite: 0.4.24
       unpipe: 1.0.0
+    dev: false
+
+  /react-is@16.13.1:
+    resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
+    dev: false
+
+  /react@16.14.0:
+    resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.8.1
     dev: false
 
   /readdirp@3.6.0:
@@ -918,6 +1066,10 @@ packages:
       punycode: 2.3.1
     dev: false
 
+  /tslib@1.14.1:
+    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
+    dev: false
+
   /type-is@1.6.18:
     resolution: {integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==}
     engines: {node: '>= 0.6'}
@@ -945,6 +1097,11 @@ packages:
     dependencies:
       querystringify: 2.2.0
       requires-port: 1.0.0
+    dev: false
+
+  /utility-types@3.11.0:
+    resolution: {integrity: sha512-6Z7Ma2aVEWisaL6TvBCy7P8rm2LQoPv6dJ7ecIaIixHcwfbJ0x7mWdbcwlIM5IGQxPZSFYeqRCqlOOeKoJYMkw==}
+    engines: {node: '>= 4'}
     dev: false
 
   /utils-merge@1.0.1:
