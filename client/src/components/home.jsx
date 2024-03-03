@@ -56,8 +56,8 @@ const Home = () => {
         </div>
       </nav>
       <section className="flex justify-center items-center min-h-screen">
-        <div className="flex flex-col w-[80%] justify-center items-center lg:px-48 md:px-44 sm:px-28 px-20 flex-wrap">
-          <h1 className="md:text-7xl flex justify-center sm:text-5xl text-4xl font-black tracking-tighter ">
+        <div className="flex flex-col w-[60%] justify-center items-center lg:px-48 md:px-44 sm:px-28 px-20 flex-wrap">
+          <h1 className="md:text-7xl flex mb-4 justify-center sm:text-5xl text-4xl font-black tracking-tighter ">
             Take Contributions to Next Level
           </h1>
           <div className="flex justify-start flex-col gap-4">
@@ -67,7 +67,7 @@ const Home = () => {
                 repo: "HackNITR",
               }}
               className="App-link"
-              id="1"
+              id="test1"
               filePath={"client/src/components/home.jsx"}
               style={{ color: "grey" }}
             >
