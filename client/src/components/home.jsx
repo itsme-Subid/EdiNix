@@ -34,20 +34,20 @@ const Home = () => {
 					<BiExclude className='text-4xl' />
 					<h1 className='font-semibold text-xl'>EdiNix</h1>
 				</div>
-				<div className='flex justify-center items-center'>
+				<div className='flex justify-around items-center'>
 					<Link
 						to='/docs'
-						className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
+						className='bg-slate-950 px-3 mx-5 py-2 rounded-full font-semibold border-2 border-transparent hover:border-white'>
 						Docs
 					</Link>
 					<Link
 						to='/signup'
-						className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
+						className='bg-slate-950 px-3 mx-5 py-2 rounded-full font-semibold border-2 border-transparent hover:border-white'>
 						Sign Up
 					</Link>
 					<Link
 						to='/login'
-						className='bg-slate-950 px-5 py-2 rounded-full font-semibold hover:border-2 hover:border-white'>
+						className='bg-slate-950 px-3 mx-5 py-2 rounded-full font-semibold border-2 border-transparent hover:border-white'>
 						Login
 					</Link>
 				</div>
