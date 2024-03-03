@@ -1,19 +1,23 @@
 import React, { useRef, useState } from "react";
+import EditIcon from "./editIcon.jsx";
+import styles from "./edinix.module.css";
+import CrossIcon from "./crossIcon.jsx";
 
 const Edinix = ({
   id,
   filePath,
   children,
   style,
+  className,
   repo = {
     owner,
     repo,
   },
+  changedText,
 }) => {
   const dialogRef = useRef(null);
-  const [body, setBody] = useState(children);
-  const [title, setTitle] = useState(`Update "${filePath}"`);
-  const [changes, setChanges] = useState("");
+  const [changes, setChanges] = useState(changedText || "");
+  const [showEditButton, setShowEditButton] = useState(false);
 
   const handleEditClick = () => {
     dialogRef.current.showModal();
@@ -29,40 +33,39 @@ const Edinix = ({
 
   return (
     <div
+      className={`${className} ${styles.edinixContainer}`}
       key={id}
+      id="edinix-container"
       style={{
         ...style,
         position: "relative",
       }}
+      onMouseEnter={() => setShowEditButton(true)}
+      onMouseLeave={() => setShowEditButton(false)}
     >
       {children}
-      <div style={{ position: "absolute", top: 0, right: 0 }}>
-        <button onClick={handleEditClick}>Edit</button>
+      <div
+        className={`${styles.editBtn} ${
+          showEditButton ? styles.editBtnShow : ""
+        }`}
+      >
+        <EditIcon onClick={handleEditClick} className={`${styles.editIcon}`} />
       </div>
       <dialog ref={dialogRef}>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Enter text"
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-          />
-          <input
-            type="text"
+        <form className={`${styles.formContainer}`} onSubmit={handleSubmit}>
+          <textarea
             placeholder="Enter text"
             value={changes}
             onChange={(e) => setChanges(e.target.value)}
+            className={`${styles.textarea}`}
           />
-          <button type="submit">Submit</button>
-          <button type="button" onClick={handleCloseDialog}>
-            Close
+          <button type="submit" className={`${styles.submitBtn}`}>
+            Submit
           </button>
+          <CrossIcon
+            onClick={handleCloseDialog}
+            className={`${styles.crossIcon}`}
+          />
         </form>
       </dialog>
     </div>

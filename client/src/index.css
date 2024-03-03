@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	background-image: linear-gradient(to bottom,
+			#000000,
+			#0e1421,
+			#151d2c,
+			#1c2638,
+			#233044);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	color: white;
+}
