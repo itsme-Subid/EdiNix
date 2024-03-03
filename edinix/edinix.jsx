@@ -33,7 +33,6 @@ const Edinix = ({
         changes,
         filePath,
       });
-      console.log(res);
     } catch (error) {
     } finally {
       handleCloseDialog();
