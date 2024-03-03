@@ -27,23 +27,34 @@ const MainContent = () => {
 				<h2 id='section1' className='font-bold text-5xl mb-4'>
 					Getting Started with EdiNix
 				</h2>
-				<p className='text-gray-500'>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id
-					felis et ipsum bibendum ultrices. Morbi vitae pulvinar velit. Sed
-					aliquam dictum sapien, id sagittis augue malesuada eu.
+				<p className='text-gray-500 text-2xl'>
+					Contribute to open source projects with ease, without worrying about
+					git and github.
 				</p>
 				<h1 className='my-5 text-4xl'>What is EdiNix ?</h1>
 				<p className='text-justify'>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-					inventore recusandae nulla tempora soluta vel velit officiis,
-					molestias consectetur suscipit impedit necessitatibus atque doloribus
-					totam ullam temporibus, ea cupiditate praesentium aperiam obcaecati
-					ab. Amet dolores aut magnam modi temporibus obcaecati.
+					Introducing EdiNix, a JavaScript npm library designed to simplify the
+					use of Git and GitHub for non-coders. With EdiNix, users can
+					effortlessly commit changes and create pull requests with just a
+					click, eliminating the need for complex commands and terminal
+					navigation. Seamlessly integrated with GitHub, EdiNix offers a
+					user-friendly interface that abstracts away the complexities of
+					version control.
 				</p>
 				<h1 className='my-5 text-3xl font-semibold'>Features</h1>
 				<ul className='list-disc ml-20'>
-					<li>Point 1</li>
-					<li>Point 2</li>
+					<li>
+						<b>Commit with Ease: </b> With EdiNix, users can commit changes to
+						their repositories effortlessly. Instead of typing out lengthy
+						commit messages and commands, they can simply click a button to save
+						their work.
+					</li>
+					<li>
+						Pull Requests Made Simple: Creating pull requests becomes a breeze
+						with GitEase. Users can initiate pull requests directly from their
+						repositories without needing to understand the intricacies of
+						branching and merging.
+					</li>
 					<li>Point 3</li>
 					<li>Point 4</li>
 					<li>Point 5</li>
