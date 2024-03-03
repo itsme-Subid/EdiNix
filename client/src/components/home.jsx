@@ -4,6 +4,7 @@ import Typed from "typed.js";
 import { Link } from "react-router-dom";
 import { BiExclude } from "react-icons/bi";
 import { MdContentCopy } from "react-icons/md";
+import Edinix from "../../../edinix/edinix";
 
 const Home = () => {
 	const [copied, setCopied] = React.useState(false);
@@ -59,8 +60,19 @@ const Home = () => {
 					</h1>
 					<div className='flex justify-start flex-col gap-4'>
 						<p className='text-2xl font-medium mt-5 text-gray-500'>
+							<Edinix
+								repo={{
+									owner: "itsme-Subid",
+									repo: "HackNITR",
+								}}
+								className='App-link'
+								id='1'
+								filePath={"client/src/components/home.jsx"}
+								style={{ color: "grey" }}			
+							>
 							Contribute to open source projects with ease, without worrying
 							about git and github.
+							</Edinix>
 						</p>
 						<button className='bg-gray-500 text-xl hover:bg-gray-700 font-bold py-4 md:px-4 rounded mt-10 duration-300 w-1/2 sm:w-1/3 md:1/4'>
 							Get Started
