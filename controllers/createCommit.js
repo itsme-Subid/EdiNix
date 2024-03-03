@@ -1,10 +1,12 @@
 const axios = require("axios");
 require("dotenv").config();
+const { JSDOM } = require("jsdom");
+
 
 const token = process.env.GITHUB_TOKEN;
 
 const createCommit = async (req, res, sourceBranch) => {
-  const { owner, repo, filePath } = req.body;
+  const { owner, repo, filePath, id, changes } = req.body;
   const authHeaders = {
     Authorization: `Bearer ${token}`,
     "Content-Type": "application/json",
@@ -30,7 +32,17 @@ const createCommit = async (req, res, sourceBranch) => {
     const fileContent = Buffer.from(fileRes.data.content, "base64").toString(
       "utf-8"
     );
-    const updatedFileContent = fileContent + "\n\n// Updated by GitHub API";
+    const { window } = new JSDOM(fileContent);
+    const doc = window.document;
+
+    const elementToChange = doc.querySelector(`#${id}`);
+    let updatedFileContent = "";
+    if (elementToChange) {
+      elementToChange.textContent = changes;
+      updatedFileContent = doc.documentElement.outerHTML;
+    } else {
+      console.log(`Element with ID '${id}' not found`);
+    }
     const blobRes = await axios.post(
       `https://api.github.com/repos/${owner}/${repo}/git/blobs`,
       {
