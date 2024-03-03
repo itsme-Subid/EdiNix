@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import EditIcon from "./editIcon.jsx";
-import styles from "./edinix.module.css";
+import styles from "./edinix.css";
 import CrossIcon from "./crossIcon.jsx";
 
 const Edinix = ({
