@@ -9,10 +9,7 @@ const Edinix = ({
   children,
   style,
   className,
-  repo = {
-    owner,
-    repo,
-  },
+  repo: { owner, repo },
 }) => {
   const dialogRef = useRef(null);
   const [changes, setChanges] = useState(children || "");
@@ -28,14 +25,19 @@ const Edinix = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.post("http://localhost:3000/api/v1/create-pr", {
-      id,
-      owner,
-      repo,
-      changes,
-      filePath,
-    });
-    console.log(res);
+    try {
+      const res = await axios.post("http://localhost:3000/api/v1/create-pr", {
+        id,
+        owner,
+        repo,
+        changes,
+        filePath,
+      });
+      console.log(res);
+    } catch (error) {
+    } finally {
+      handleCloseDialog();
+    }
   };
 
   return (
@@ -69,7 +71,11 @@ const Edinix = ({
           <EditIcon style={{ width: "25px", height: "25px" }} />
         </button>
       )}
-      <dialog className="dialog" style={{backgroundColor: "#0d121e",}} ref={dialogRef}>
+      <dialog
+        className="dialog"
+        style={{ backgroundColor: "#0d121e" }}
+        ref={dialogRef}
+      >
         <button
           style={{
             color: "inherit",
@@ -84,7 +90,7 @@ const Edinix = ({
           }}
           onClick={handleCloseDialog}
         >
-          <CrossIcon style={{color: "white"}} />
+          <CrossIcon style={{ color: "white" }} />
         </button>
         <form
           style={{
@@ -110,7 +116,7 @@ const Edinix = ({
               color: "white",
               padding: "10px",
               borderRadius: "5px",
-              border: "1px solid lightgray"
+              border: "1px solid lightgray",
             }}
             rows={10}
             value={changes}
