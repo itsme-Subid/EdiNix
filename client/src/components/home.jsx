@@ -53,7 +53,7 @@ const Home = () => {
 				</div>
 			</nav>
 			<section className='flex justify-center items-center min-h-screen'>
-				<div className='flex flex-col w-full justify-center items-center lg:px-48 md:px-44 sm:px-28 px-20 flex-wrap'>
+				<div className='flex flex-col w-[80%] justify-center items-center lg:px-48 md:px-44 sm:px-28 px-20 flex-wrap'>
 					<h1 className='md:text-7xl flex justify-center sm:text-5xl text-4xl font-black tracking-tighter '>
 						Take Contributions to Next Level
 					</h1>
@@ -73,7 +73,7 @@ const Home = () => {
 						<span ref={el} />
 					</div>
 					<h1
-						className=' border border-gray-300 w-1/2 justify-center rounded-lg bg-black text-xl font-extralight py-2 flex gap-2 items-center px-4 cursor-pointer'
+						className=' border border-gray-300 w-1/2 justify-center rounded-lg bg-black text-base font-extralight py-2 flex gap-2 items-center px-4 cursor-pointer'
 						onClick={handleCopy}>
 						{!copied && <span>$ npm install edinix</span>}
 						{!copied && <MdContentCopy />}
