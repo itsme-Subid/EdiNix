@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import EditIcon from "./editIcon.jsx";
 import styles from "./edinix.module.css";
 import CrossIcon from "./crossIcon.jsx";
+import axios from "axios";
 
 const Edinix = ({
   id,
@@ -9,10 +10,7 @@ const Edinix = ({
   children,
   style,
   className,
-  repo = {
-    owner,
-    repo,
-  },
+  repo: { owner, repo },
   changedText,
 }) => {
   const dialogRef = useRef(null);
@@ -29,6 +27,14 @@ const Edinix = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const res = await axios.post("http://localhost:3000/api/v1/create-pr", {
+      id,
+      owner,
+      repo,
+      changes,
+      filePath,
+    });
+    console.log(res);
   };
 
   return (
