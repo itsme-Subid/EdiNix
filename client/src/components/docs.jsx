@@ -4,24 +4,18 @@ import { BiExclude } from "react-icons/bi";
 const Sidebar = () => {
 	return (
 		<div className='w-1/3 h-full overflow-y-auto p-4 border-r border-gray-300'>
-			<h2 className='font-bold text-xl mb-4'>Sidebar</h2>
+			<h2 className='font-bold text-xl mb-4'>Get Started</h2>
 			<ul className='space-y-2'>
 				<li>
-					<a href='#section1' className='text-blue-500 hover:underline'>
-						Section 1
+					<a href='#section1' className='text-gray-300 hover:underline'>
+						Introduction
 					</a>
 				</li>
 				<li>
-					<a href='#section2' className='text-blue-500 hover:underline'>
-						Section 2
+					<a href='#section2' className='text-gray-300 hover:underline'>
+						Installation
 					</a>
 				</li>
-				<li>
-					<a href='#section3' className='text-blue-500 hover:underline'>
-						Section 3
-					</a>
-				</li>
-				{/* Add more links as needed */}
 			</ul>
 		</div>
 	);
@@ -31,7 +25,7 @@ const MainContent = () => {
 		<div className='flex h-screen overflow-hidden'>
 			<div className='flex-grow mx-10 py-4 w-2/3'>
 				<h2 id='section1' className='font-bold text-5xl mb-4'>
-					Getting Started
+					Getting Started with EdiNix
 				</h2>
 				<p className='text-gray-500'>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id
@@ -46,7 +40,7 @@ const MainContent = () => {
 					totam ullam temporibus, ea cupiditate praesentium aperiam obcaecati
 					ab. Amet dolores aut magnam modi temporibus obcaecati.
 				</p>
-				<h1 className='my-5 text-4xl'>Features</h1>
+				<h1 className='my-5 text-3xl font-semibold'>Features</h1>
 				<ul className='list-disc ml-20'>
 					<li>Point 1</li>
 					<li>Point 2</li>
@@ -54,7 +48,7 @@ const MainContent = () => {
 					<li>Point 4</li>
 					<li>Point 5</li>
 				</ul>
-				<h1 className='mt-5 text-4xl'>Installing</h1>
+				<h1 className='my-5 text-3xl font-semibold'>Installing</h1>
 				<p className='my-4'>Using npm:</p>
 				<h1 className='bg-gray-100 py-2 px-10 rounded-md text-black w-3/4'>
 					<code>$ npm install edinix</code>
