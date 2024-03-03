@@ -3,6 +3,8 @@ import Typed from "typed.js";
 import { Link } from "react-router-dom";
 import { BiExclude } from "react-icons/bi";
 import { MdContentCopy } from "react-icons/md";
+// eslint-disable-next-line no-unused-vars
+import axios from "axios";
 import Edinix from "edinix";
 
 const Home = () => {
