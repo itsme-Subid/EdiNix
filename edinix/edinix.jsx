@@ -12,10 +12,9 @@ const Edinix = ({
     owner,
     repo,
   },
-  changedText,
 }) => {
   const dialogRef = useRef(null);
-  const [changes, setChanges] = useState(changedText || "");
+  const [changes, setChanges] = useState(children || "");
   const [showEditButton, setShowEditButton] = useState(false);
 
   const handleEditClick = () => {
@@ -37,7 +36,7 @@ const Edinix = ({
       id="edinix-container"
       style={{
         ...style,
-        padding: "10px",
+        position: "relative",
         fontFamily: "Arial, sans-serif",
       }}
       onMouseEnter={() => setShowEditButton(true)}
@@ -61,7 +60,7 @@ const Edinix = ({
           <EditIcon style={{ width: "25px", height: "25px" }} />
         </button>
       )}
-      <dialog className="dialog" style={{backgroundColor: "#000",}} ref={dialogRef}>
+      <dialog className="dialog" style={{backgroundColor: "#0d121e",}} ref={dialogRef}>
         <button
           style={{
             color: "inherit",
@@ -69,14 +68,14 @@ const Edinix = ({
             position: "absolute",
             right: 0,
             top: 0,
-            width: "25px",
             height: "25px",
             backgroundColor: "transparent",
             border: "none",
+            padding: "5px",
           }}
           onClick={handleCloseDialog}
         >
-          <CrossIcon />
+          <CrossIcon style={{color: "white"}} />
         </button>
         <form
           style={{
@@ -84,10 +83,11 @@ const Edinix = ({
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "black",
             gap: "20px",
             width: "300px",
             padding: "20px",
+            fontSize: "20px",
+            overflow: "auto",
           }}
           onSubmit={handleSubmit}
         >
@@ -95,15 +95,15 @@ const Edinix = ({
             style={{
               boxSizing: "border-box",
               width: "100%",
-              resize: "vertical",
-              minHeight: "50px",
+              minHeight: "30px",
               outline: "none",
               backgroundColor: "black",
               color: "white",
               padding: "10px",
               borderRadius: "5px",
-              border: "1px solid #ccc",
+              border: "1px solid lightgray"
             }}
+            rows={10}
             value={changes}
             onChange={(e) => setChanges(e.target.value)}
           />
@@ -114,13 +114,14 @@ const Edinix = ({
               height: "30px",
               borderRadius: "5px",
               cursor: "pointer",
-              backgroundColor: "#4CAF50",
+              backgroundColor: "#606673",
               color: "white",
               border: "none",
+              fontSize: "17px",
               transition: "background-color 0.3s",
             }}
             onMouseEnter={(e) => (e.target.style.backgroundColor = "#45a049")}
-            onMouseLeave={(e) => (e.target.style.backgroundColor = "#4CAF50")}
+            onMouseLeave={(e) => (e.target.style.backgroundColor = "#606673")}
           >
             Submit
           </button>
