@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import EditIcon from "./editIcon.jsx";
 import CrossIcon from "./crossIcon.jsx";
+import axios from "axios";
 
 const Edinix = ({
   id,
@@ -27,6 +28,14 @@ const Edinix = ({
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const res = await axios.post("http://localhost:3000/api/v1/create-pr", {
+      id,
+      owner,
+      repo,
+      changes,
+      filePath,
+    });
+    console.log(res);
   };
 
   return (
