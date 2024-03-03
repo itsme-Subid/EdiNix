@@ -6,26 +6,30 @@ const createPR = require("../controllers/createPR");
 
 const router = Router();
 
-router.post("/commit", () => {
+router.post("/commit", async (req, res) => {
   const { sourceBranch } = req.query;
-  createCommit(req, res, sourceBranch);
+  const resCommit = await createCommit(req, res, sourceBranch);
+  return res.json(resCommit);
 });
 
-router.post("/branch", (req, res) => {
+router.post("/branch", async (req, res) => {
   const { branch } = req.query;
-  createBranch(req, res, branch);
+  const resBranch = await createBranch(req, res, branch);
+  return res.json(resBranch);
 });
 
-router.post("/pull-request", (req, res) => {
+router.post("/pull-request", async (req, res) => {
   const { sourceBranch, destinationBranch } = req.query;
-  createPR(req, res, sourceBranch, destinationBranch);
+  const resPR = await createPR(req, res, sourceBranch, destinationBranch);
+  return res.json(resPR);
 });
 
 router.post("/create-pr", async (req, res) => {
   const head = uuidv4();
   await createBranch(req, res, head);
   await createCommit(req, res, head);
-  await createPR(req, res, head, "main");
+  const resPR = await createPR(req, res, head, "main");
+  return res.json(resPR);
 });
 
 module.exports = router;

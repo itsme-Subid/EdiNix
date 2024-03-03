@@ -27,9 +27,9 @@ const createPR = async (req, res, sourceBranch, destinationBranch) => {
         },
       }
     );
-    return res.json(response.data);
+    return response.data;
   } catch (error) {
-    console.error("Error creating Pull request:", error.response.data);
+    console.error("Error creating Pull request:", error.response);
   }
 };
 

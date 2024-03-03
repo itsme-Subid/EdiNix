@@ -81,11 +81,12 @@ const createCommit = async (req, res, sourceBranch) => {
         headers: authHeaders,
       }
     );
-    return res.json(
-      `File ${filePath} has been updated in branch ${sourceBranch}`
-    );
+    return `File ${filePath} has been updated in branch ${sourceBranch}`;
   } catch (error) {
     console.error("Error committing file:", error);
+    return res
+      .status(500)
+      .json({ error: "An error occurred while committing the file" });
   }
 };
 

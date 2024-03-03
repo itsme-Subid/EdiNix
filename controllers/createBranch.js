@@ -30,7 +30,7 @@ const createBranch = async (req, res, branch) => {
         headers: authHeaders,
       }
     );
-    return res.json(createBranchRes.data);
+    return createBranchRes.data;
   } catch (error) {
     console.error("Error creating branch:", error.response.data.message);
   }
